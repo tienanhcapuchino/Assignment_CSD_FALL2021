@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Product.java</file>
-            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Customer.java</file>
-            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Orders.java</file>
+            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Manager/Validate.java</file>
+            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Entity/MyList.java</file>
+            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Manager/menuManager.java</file>
+            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Entity/Product.java</file>
+            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Entity/Customer.java</file>
+            <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Entity/Orders.java</file>
             <file>file:/D:/FPT%20University/FALL%202021/CSD201/Sale_Management_System/src/Main.java</file>
         </group>
     </open-files>

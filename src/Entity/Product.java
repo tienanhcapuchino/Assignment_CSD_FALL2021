@@ -1,5 +1,12 @@
 
-public class Product {
+
+
+package Entity;
+
+import java.util.Objects;
+
+
+public class Product implements Comparable<Product>{
     private String pcode;
     private String pro_name;
     private int quantity;
@@ -62,4 +69,33 @@ public class Product {
         return "Product{" + "pcode=" + pcode + ", pro_name=" + pro_name + ", quantity=" + quantity + ", sold=" + sold + ", price=" + price + '}';
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Product other = (Product) obj;
+        if (!Objects.equals(this.pcode, other.pcode)) {
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 37 * hash + Objects.hashCode(this.pcode);
+        return hash;
+    }
+    
+    @Override
+    public int compareTo(Product t) {
+        return t.getPcode().compareTo(pcode);
+    }
 }

@@ -1,5 +1,10 @@
 
-public class Customer {
+
+package Entity;
+
+import java.util.Objects;
+
+public class Customer implements Comparable<Customer>{
     private String ccode;
     private String cus_name;
     private String phone;
@@ -42,4 +47,29 @@ public class Customer {
         return "Customer{" + "ccode=" + ccode + ", cus_name=" + cus_name + ", phone=" + phone + '}';
     }
     
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + Objects.hashCode(this.ccode);
+        return hash;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Customer other = (Customer) obj;
+        if (!Objects.equals(this.ccode, other.ccode)){
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public int compareTo(Customer t) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
