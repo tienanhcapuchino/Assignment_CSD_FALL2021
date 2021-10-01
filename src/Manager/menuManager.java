@@ -11,32 +11,57 @@ public class menuManager {
     public MyList<Orders> ordl = new MyList<>();
 
     public void loadFromProduct(String path) {
-        try {
-            File f = new File(path);
+		try {
+			File f = new File(path);
             Scanner sc = new Scanner(f);
-            while (sc.hasNextLine()) {
+            while (sc.hasNextLine()) {                
                 String br = sc.nextLine().replaceAll("\\s+", "");
-                String[] d = br.split("|");
-                Product p = new Product(d[0], d[1], Integer.parseInt(d[2]), Integer.parseInt(d[3]),
-                        Double.parseDouble(d[4]));
+                
+                br += "|";
+                String[] d = new String[5];
+                String sub;
+                int indexChar = 0;
+                int indexArr = 0;
+                while (indexArr < 5)
+                {
+                	indexChar = br.indexOf('|');
+                	sub = br.substring(0, indexChar);
+                	d[indexArr++] = sub;
+                	if (indexChar + 1 < br.length()) 
+                		br = br.substring(indexChar + 1);
+                }
+                Product p = new Product(d[0], d[1], Integer.parseInt(d[2]), Integer.parseInt(d[3]), Double.parseDouble(d[4]));
                 prol.addToTail(p);
-            }
-        } catch (FileNotFoundException | NumberFormatException e) {
-        }
-    }
+			}
+		} catch (FileNotFoundException | NumberFormatException e) {
+		}
+	}
 
     public void loadFromCustomer(String path) {
         try {
-            File f = new File(path);
+			File f = new File(path);
             Scanner sc = new Scanner(f);
-            while (sc.hasNextLine()) {
+            while (sc.hasNextLine()) {                
                 String br = sc.nextLine().replaceAll("\\s+", "");
-                String[] d = br.split("|");
-                Customer c = new Customer(d[0], d[1], d[2]);
+                
+                br += "|";
+                String[] d = new String[5];
+                String sub;
+                int indexChar = 0;
+                int indexArr = 0;
+                while (indexArr < 5)
+                {
+                	indexChar = br.indexOf('|');
+                	sub = br.substring(0, indexChar);
+                	d[indexArr++] = sub;
+                	if (indexChar + 1 < br.length()) 
+                		br = br.substring(indexChar + 1);
+                }
+                Customer c = new Customer(d[0], d[1], d[3]);
                 cusl.addToTail(c);
-            }
-        } catch (FileNotFoundException | NumberFormatException e) {
-        }
+			}
+		} catch (FileNotFoundException | NumberFormatException e) {
+		}
     }
 
 
