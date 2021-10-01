@@ -40,7 +40,15 @@ public class Orders implements Comparable<Orders>{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
+    public void displayData() {
+        Orders od = new Orders();
+        Node<Orders> o = orderList.getObject(0);
+        while (o != null) {
+            od = o.getInfo();
+            System.out.print(od.getPcode() + " | " + od.getCcode() + " | " + od.getQuantity());
+            o = o.getNext();
+        }
+    }   
     @Override
     public String toString() {
         return "Orders{" + "pcode=" + pcode + ", ccode=" + ccode + ", quantity=" + quantity + '}';

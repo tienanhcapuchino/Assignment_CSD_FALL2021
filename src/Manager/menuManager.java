@@ -39,13 +39,39 @@ public class menuManager {
         }
     }
 
-    public void displayData() {
-        Product product = new Product();
-        Node<Product> p = prol.getObject(0);
-        while (p != null) {
-            product = p.getInfo();
-            System.out.print(product.getPcode() + " | " + product.getPro_name() + " | " + product.getQuantity() + " | " + product.getSold() + " | " + product.getPrice() + " | " + product.getPrice() * product.getSold());
-            p = p.getNext();
+
+
+    public void saveToFileProduct(String path) {
+        try {
+            File f = new File(path);
+            if (f.exists()) {
+                f.delete();
+            }
+            f.createNewFile();
+            BufferedWriter fw = new BufferedWriter(new FileWriter(f));
+            Node<Product> n = prol.head;
+            while (n != null) {
+                fw.write(n.getInfo().write() + "\n");
+            }
+            fw.close();
+        } catch (Exception e) {
+        }
+    }
+
+    public void saveToFileCustomer(String path) {
+        try {
+            File f = new File(path);
+            if (f.exists()) {
+                f.delete();
+            }
+            f.createNewFile();
+            BufferedWriter fw = new BufferedWriter(new FileWriter(f));
+            Node<Customer> n = cusl.head;
+            while (n != null) {
+                fw.write(n.getInfo().write() + "\n");
+            }
+            fw.close();
+        } catch (Exception e) {
         }
     }
 }

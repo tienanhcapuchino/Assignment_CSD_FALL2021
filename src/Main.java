@@ -10,8 +10,6 @@ public class Main {
         // Scanner sc = new Scanner(System.in);
         Product pr = new Product("P03", "Iphone", 20, 10, 2000);
         menuManager m1 = new menuManager();
-        m1.prol.addToTail(pr);
-        m1.displayData();
         
         // int choice = 0;
         // do {

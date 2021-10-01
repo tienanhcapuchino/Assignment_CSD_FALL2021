@@ -2,7 +2,8 @@
 package Entity;
 
 public class MyList<E extends Comparable<E>> {
-    Node<E> head, tail;
+    public Node<E> head;
+    Node<E> tail;
     Node<E> sorted;
 
     public void myList() {

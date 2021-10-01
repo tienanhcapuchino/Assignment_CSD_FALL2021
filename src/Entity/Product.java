@@ -89,7 +89,20 @@ public class Product implements Comparable<Product>{
         }
         return true;
     }
-    
+    public void displayData() {
+        Product product = new Product();
+        Node<Product> p = productList.getObject(0);
+        while (p != null) {
+            product = p.getInfo();
+            System.out.print(product.getPcode() + " | " + product.getPro_name() + " | " + product.getQuantity() + " | "
+                    + product.getSold() + " | " + product.getPrice() + " | " + product.getPrice() * product.getSold());
+            p = p.getNext();
+        }
+    }   
+    public String write() {
+        return getPcode() + " | " + getPro_name() + " | " + getQuantity() + " | "
+        + getSold() + " | " + getPrice();
+    }
     @Override
     public int hashCode() {
         int hash = 5;

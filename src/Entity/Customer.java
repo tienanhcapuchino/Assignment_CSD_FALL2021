@@ -53,10 +53,21 @@ public class Customer implements Comparable<Customer>{
     
     @Override
     public String toString() {
-        return "Customer{" + "ccode=" + ccode + ", cus_name=" + cus_name + ", phone=" + phone + ", cusList=" + cusList + '}';
+        return "Customer{" + "ccode=" + ccode + ", cus_name=" + cus_name + ", phone=" + phone ;
     }
     
-    
+    public String write() {
+        return getCcode() + " | " + getCus_name() + " | " + getPhone();
+    }
+    public void displayData() {
+        Customer cus = new Customer();
+        Node<Customer> c = cusList.getObject(0);
+        while (c != null) {
+            cus = c.getInfo();
+            System.out.print(cus.getCcode() + " | " + cus.getCus_name() + " | " + cus.getPhone());
+            c = c.getNext();
+        }
+    }   
     @Override
     public int hashCode() {
         int hash = 3;
