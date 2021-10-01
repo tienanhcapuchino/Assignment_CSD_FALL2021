@@ -5,6 +5,8 @@ public class Orders implements Comparable<Orders>{
     private String pcode;
     private String ccode;
     private int quantity;
+    
+    private MyList<Orders> orderList = new MyList<>();
 
     public Orders() {
     }

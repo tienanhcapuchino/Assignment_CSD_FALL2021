@@ -13,6 +13,8 @@ public class Product implements Comparable<Product>{
     private int sold;
     private double price;
 
+    private MyList<Product> productList = new MyList<>();
+
     public Product() {
     }
 
@@ -63,6 +65,7 @@ public class Product implements Comparable<Product>{
     public void setPrice(double price) {
         this.price = price;
     }
+
 
     @Override
     public String toString() {

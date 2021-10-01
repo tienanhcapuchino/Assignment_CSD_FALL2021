@@ -8,6 +8,7 @@ public class Customer implements Comparable<Customer>{
     private String ccode;
     private String cus_name;
     private String phone;
+    private MyList<Customer> cusList = new MyList<>();
 
     public Customer() {
     }
@@ -17,7 +18,7 @@ public class Customer implements Comparable<Customer>{
         this.cus_name = cus_name;
         this.phone = phone;
     }
-
+    
     public String getCcode() {
         return ccode;
     }
@@ -42,10 +43,19 @@ public class Customer implements Comparable<Customer>{
         this.phone = phone;
     }
 
+    public MyList<Customer> getCusList() {
+        return cusList;
+    }
+
+    public void setCusList(MyList<Customer> cusList) {
+        this.cusList = cusList;
+    }
+    
     @Override
     public String toString() {
-        return "Customer{" + "ccode=" + ccode + ", cus_name=" + cus_name + ", phone=" + phone + '}';
+        return "Customer{" + "ccode=" + ccode + ", cus_name=" + cus_name + ", phone=" + phone + ", cusList=" + cusList + '}';
     }
+    
     
     @Override
     public int hashCode() {
